@@ -1,0 +1,9 @@
+body{
+	font-family: "Hanken Grotesk", sans-serif;
+	background-color: rgba(0, 0, 0, 0.849);
+	color: #f2f3f8;
+}
+
+input[type="checkbox"] {
+    filter: sepia(100%) brightness(80%) hue-rotate(170deg) saturate(70%) contrast(300%);
+}

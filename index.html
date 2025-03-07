@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Character Counter</title>
+</head>
+
+<body>
+    <div class="container mx-auto grid gap-15 content-center h-screen">
+        <div>
+            <h1 class="text-4xl font-bold">Character Counter</h1>
+        </div>
+        <div class="text-center">
+            <h2 class="text-6xl font-bold">Analyze your text<br>in real-time.</h2>
+        </div>
+        <div>
+            <textarea class="bg-zinc-900 border border-zinc-600 text-white p-4 rounded-md w-full h-50 text-lg"
+                placeholder="Start typing your text here..." id="text-input"></textarea>
+            <div class="pt-4">
+                <div class="inline-block me-5">
+                    <input type="checkbox" name="exclude-spaces" id="exclude-spaces">
+                    <label for="exclude-spaces">Exclude Spaces</label>
+                </div>
+                <div class="inline-block me-5">
+                    <input type="checkbox" name="character-limit" id="character-limit">
+                    <label for="character-limit">Set Character Limit</label>
+                </div>
+                <div class="inline-block">
+                    <input type="text" name="character-limit-value" value="100" placeholder="Insert Number" class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-25 text-center" id="character-limit-value">
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-purple-300 p-6 rounded-2xl shadow-lg">
+                <span class="text-black text-5xl font-bold pb-2" id="character-count">00</span>
+                <p class="text-black text-lg">Total Characters</p>
+            </div>
+            <div class="bg-orange-300 p-6 rounded-2xl shadow-lg">
+                <span class="text-black text-5xl font-bold pb-2" id="word-count">00</span>
+                <p class="text-black text-lg">Word Count</p>
+            </div>
+            <div class="bg-red-300 p-6 rounded-2xl shadow-lg">
+                <span class="text-black text-5xl font-bold pb-2" id="sentence-count">00</span>
+                <p class="text-black text-lg">Sentence Count</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
