@@ -25,7 +25,6 @@ function updateValue() {
     letterChart.innerHTML = "";
     let letters = [];
     let letterAmount = [];
-
     if (excludeSpaces.checked) {
         characterCount.textContent = textInput.value.replace(/\s/g, "").length;
     } else {
@@ -48,6 +47,13 @@ function updateValue() {
         }
     }
 
+    let sortedEntries = Object.entries(letterCounts).sort();
+
+    sortedEntries.forEach(([letter, count]) => {
+        letters.push(letter);
+        letterAmount.push(count);
+    });
+
     // Foreach loop out letters in a chart
     Object.entries(letterCounts).forEach(([letter, count]) => {
         console.log(letter, count);
@@ -63,11 +69,24 @@ function updateValue() {
         ctxContainer.style.display = "block";
     }
     myChart = new Chart(ctx, {
+        plugins: [ChartDataLabels],
         type: 'bar',
         data: {
-            labels: letters.sort(),
+            labels: letters,
             datasets: [{
+                backgroundColor: '#2e6489',
                 data: letterAmount,
+                datalabels: {
+                    anchor: 'end',
+                    align: 'center',
+                    color: '#f2f3f8',
+                    font: {
+                        weight: 'semibold',
+                    },
+                    formatter: function (value, context) {
+                        return value;
+                    }
+                }
             }]
         },
         options: {
@@ -80,11 +99,6 @@ function updateValue() {
             responsive: true,
             maintainAspectRatio: false,
 
-        },
-        scales: {
-            y: {
-
-            },
         },
     });
 };

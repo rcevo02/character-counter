@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="container mx-auto grid gap-15 content-center h-screen">
+    <div class="container mx-auto grid gap-15 content-center h-screen pt-20">
         <div>
             <h1 class="text-3xl font-bold">Character Counter</h1>
         </div>
@@ -59,7 +59,7 @@
         <div>
             <h3 class="text-3xl font-bold mb-6">Letter Density</h3>
             <span id="no-letters">No characters found. Start typing to see letter density.</span>
-            <div style="height: 400px" id="myChart-container">
+            <div style="height: 500px" id="myChart-container">
                 <canvas id="myChart"></canvas>
             </div>
             <div id="letter-chart">
@@ -67,4 +67,5 @@
         </div>
     </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
